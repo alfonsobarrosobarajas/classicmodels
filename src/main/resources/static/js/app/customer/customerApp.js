@@ -16,6 +16,7 @@ angular.module('customerModule', [])
             country : null,
             salesrepemployeenumber : null,
             creditlimit : null
+
         };
 
         $scope.customers = [];
@@ -32,6 +33,23 @@ angular.module('customerModule', [])
                 (response) => {
 
                 });
+
+        }
+
+        $scope.save = (customer) => {
+
+            $http.post('/customer/save', customer).then(
+                (response) => {
+
+                    $window.alert('Cliente creado con éxito');
+
+                },
+                (response) => {
+
+                    $window.alert(response.status);
+
+                }
+            );
 
         }
 
