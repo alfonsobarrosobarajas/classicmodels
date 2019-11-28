@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Classic Models</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/app/customer/customerApp.js"></script>
+
+</head>
+
+<body ng-app="customerModule" ng-controller="customerController" ng-cloack>
+
+    <div class="container">
+
+        <h1>Customers</h1>
+
+        <table class="table table-striped">
+
+            <thead class="thead-dark">
+                <th>Nombre</th>
+                <th>Contacto</th>
+                <th>Teléfono</th>
+                <th>Ciudad</th>
+                <th>Estado</th>
+                <th>País</th>
+            </thead>
+
+            <tbody>
+
+                <tr ng-repeat="customer in customers">
+
+                    <td>{{customer.customerName}}</td>
+                    <td>{{customer.contactFirstName}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.city}}</td>
+                    <td>{{customer.state}}</td>
+                    <td>{{customer.country}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+</body>
+</html>
